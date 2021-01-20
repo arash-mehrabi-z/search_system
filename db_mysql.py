@@ -5,22 +5,15 @@ class DB_MYSQL:
     def __init__(self):
         mydb = mysql.connector.connect(
             host="localhost",
-            user="arashzkz",
-            password="akram0724#!",
+            user="YOUR_USER_HERE",
+            password="YOUR_PASSWORD_HERE",
             database="search_system"
         )
         self.mydb = mydb
         self.mycursor = mydb.cursor()
 
     def insert_news(self, title_tokens, body_tokens, title_text, description, url, date):
-        # print(title_tokens)
-        # print(body_tokens)
-        # print(title_text)
-        # print(description)
-        # print(url)
-        # print(date)
-        # print("###")
-        # return 1
+
         title_tokens = json.dumps(title_tokens)
         body_tokens = json.dumps(body_tokens)
 

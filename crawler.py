@@ -6,7 +6,6 @@ from hazm import Stemmer
 from hazm import Lemmatizer
 from db_mysql import DB_MYSQL
 
-# all_news_body_tokens = []
 main_page = 'http://news.urmia.ac.ir'
 db = DB_MYSQL()
 
@@ -66,7 +65,6 @@ def parse_news_body(news_page_parser):
         for ptokens in paragraphs_tokens:
             body_tokens.append(ptokens)
     return body_tokens
-    # all_news_body_tokens.append(body_tokens)
 
 def parse_news_title(news_page_parser):
     h1_title = news_page_parser.find('h1', {'class': 'art-postheader'})
