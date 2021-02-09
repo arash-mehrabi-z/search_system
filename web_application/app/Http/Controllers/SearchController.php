@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Responses\ApiResponse;
 use App\tf_idf;
 use App\News;
 use Illuminate\Http\Request;
@@ -48,6 +49,10 @@ class SearchController extends Controller
             }
             return $result;
         });
+
+        if ($request->wantsJson()) {
+            return ApiResponse::success('', $result);
+        }
 
         return view('result', ['ten_most_relevant_news' => $result]);
     }
